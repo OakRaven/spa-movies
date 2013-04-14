@@ -13,9 +13,63 @@
     <script src="js/vendor/kendo.all.min.js"></script>
 
     <script src="js/app.js"></script>
+
+    <style>
+      #movieDetails {
+        position: fixed; top:50%; left:50%; }
+        border: 4px solid #777;
+        padding: 10px;
+        width: 800px;
+        background: #222;
+      }
+      #movieDetails dl {
+        margin: 0;
+      }
+      #movieDetails dt {
+        float: left;
+        width: 75px;
+        margin-right: 20px;
+        padding: 0;
+        font-weight: bold;
+      }
+      #movieDetails dd {
+        margin: 2px 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
     <div id="application"></div>
+    <div id="movieDetails">
+      <div>
+        <h4>Movie Details</h4>
+      </div>
+      <div style="float: left; width: 180px;">
+        <img src="http://www.movieposterdb.com/posters/09_02/1977/76759/l_76759_bea34b1e.jpg" alt="Star Wars" width="150">
+      </div>
+      <div style="float: left; width: 600px;">
+        <dl>
+          <dt>Title:</dt>
+          <dd>Star Wars</dd>
+
+          <dt>Rating:</dt>
+          <dd>PG</dd>
+
+          <dt>Director:</dt>
+          <dd>George Lucas</dd>
+
+          <dt>Released:</dt>
+          <dd>1997</dd>
+        </dl>
+        <br>
+          <p>
+            Luke Skywalker, a spirited farm boy, joins rebel forces to save Princess Leia from the evil Darth Vader, and the galaxy from the Empire's planet-destroying Death Star.
+          </p>
+        <br>
+        <a href="" class="btn">Close</a>
+      </div>
+      <div style="clear: both"></div>
+    </div>
     <script type="text/x-kendo-template" id="layout-template">
       <div class="container">
         <div class="navbar">
