@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SPA Day at the Movies</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/kendo.common.min.css" rel="stylesheet" />
+    <link href="css/kendo.rtl.min.css" rel="stylesheet" />
+    <link href="css/kendo.metro.min.css" rel="stylesheet" />
+    <link href="css/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="css/kendo.dataviz.metro.min.css" rel="stylesheet" />
+
+    <script src="js/vendor/jquery-1.8.2.min.js"></script>
+    <script src="js/vendor/kendo.all.min.js"></script>
+
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <div id="application"></div>
+    <script type="text/x-kendo-template" id="layout-template">
+      <div class="container">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a href="" class="brand">SPA Day at the Movies</a>
+            <ul class="nav">
+              <li class="active"><a href="">Home</a></li>
+              <li><a href="">About</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="well">
+          <div id="list"></div>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-kendo-template" id="movie-list-row">
+      <tr>
+        <td><a href="" data-bind="text: title"></a></td>
+        <td data-bind="text: rating"></td>
+        <td data-bind="text: director"></td>
+        <td data-bind="text: released"></td>
+        <td data-bind="text: genre"></td>
+      </tr>
+    </script>
+
+    <script type="text/x-kendo-template" id="list-template">
+      <table class="table table-condenced table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>Director</th>
+            <th>Year</th>
+            <th>Genres</th>
+          </tr>
+        </thead>
+        <tbody data-bind="source: movies" data-template="movie-list-row">
+        </tbody>
+      </table>
+    </script>
+  </body>
+</html>
