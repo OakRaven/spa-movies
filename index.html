@@ -10,13 +10,14 @@
     <link href="css/kendo.dataviz.metro.min.css" rel="stylesheet" />
 
     <script src="js/vendor/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery.center.js"></script>
     <script src="js/vendor/kendo.all.min.js"></script>
 
     <script src="js/app.js"></script>
+    <script src="js/app-ui.js"></script>
 
     <style>
       #movieDetails {
-        position: fixed; top:50%; left:50%; }
         border: 4px solid #777;
         padding: 10px;
         width: 800px;
@@ -40,36 +41,34 @@
   </head>
   <body>
     <div id="application"></div>
-    <div id="movieDetails">
-      <div>
-        <h4>Movie Details</h4>
-      </div>
-      <div style="float: left; width: 180px;">
-        <img src="http://www.movieposterdb.com/posters/09_02/1977/76759/l_76759_bea34b1e.jpg" alt="Star Wars" width="150">
-      </div>
-      <div style="float: left; width: 600px;">
-        <dl>
+    <script type="text/x-kendo-template" id="detail-template">
+      <table>
+        <tr>
+          <td style="vertical-align: top; padding-right: 1em;">
+            <img data-bind="attr: { src: movie.posterUrl, alt: movie.title }" width="250" />
+          </td>
+          <td style="vertical-align: top;">
+            <dl>
           <dt>Title:</dt>
-          <dd>Star Wars</dd>
+          <dd data-bind="text: movie.title"></dd>
 
           <dt>Rating:</dt>
-          <dd>PG</dd>
+          <dd data-bind="text: movie.rating"></dd>
 
           <dt>Director:</dt>
-          <dd>George Lucas</dd>
+          <dd data-bind="text: movie.director"></dd>
 
           <dt>Released:</dt>
-          <dd>1997</dd>
+          <dd data-bind="text: movie.released"></dd>
         </dl>
         <br>
-          <p>
-            Luke Skywalker, a spirited farm boy, joins rebel forces to save Princess Leia from the evil Darth Vader, and the galaxy from the Empire's planet-destroying Death Star.
-          </p>
-        <br>
-        <a href="" class="btn">Close</a>
-      </div>
-      <div style="clear: both"></div>
-    </div>
+          <p data-bind="text: movie.description"></p>
+          </td>
+        </tr>
+      </table>
+      <a href="" class="btn pull-right" data-bind="click: closeDetailWindow">Close</a>
+    </script>
+
     <script type="text/x-kendo-template" id="layout-template">
       <div class="container">
         <div class="navbar">
@@ -85,11 +84,12 @@
           <div id="list"></div>
         </div>
       </div>
+      <div id="movieDetails" style="display: none;"></div>
     </script>
 
     <script type="text/x-kendo-template" id="movie-list-row">
       <tr>
-        <td><a href="" data-bind="text: title"></a></td>
+        <td><a href="" data-bind="text: title, click: showTitle"></a></td>
         <td data-bind="text: rating"></td>
         <td data-bind="text: director"></td>
         <td data-bind="text: released"></td>
@@ -112,5 +112,6 @@
         </tbody>
       </table>
     </script>
+
   </body>
 </html>
