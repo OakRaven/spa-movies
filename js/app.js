@@ -3,7 +3,7 @@ var App = App || {};
 App.Data = (function(){
   var movies = new kendo.data.DataSource({
     schema: { model: {} },
-    transport: { read: { url: '/~mike/movies/movies.json', dataType: 'json' } }
+    transport: { read: { url: '/movies.json', dataType: 'json' } }
   });
 
   movies.bind('change', function(e){
