@@ -45,5 +45,21 @@
       "Adventure",
       "Sci-Fi"
     ]
+  },
+
+  {
+    "id": 4,
+    "title": "Star Wars: Episode I - The Phantom Menace",
+    "released": 1999,
+    "rating": "PG",
+    "director": "George Lucas",
+    "description": "Two Jedi Knights escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to reclaim their old glory.",
+    "posterUrl": "http://www.movieposterdb.com/posters/07_10/1999/120915/l_120915_c426c89d.jpg",
+    "imdb": "tt0120915",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ]
   }
 ]
