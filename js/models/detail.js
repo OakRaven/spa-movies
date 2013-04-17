@@ -1,13 +1,22 @@
-define(['services/data'], function(dataService){
+define([
+  'services/router',
+  'services/data'],
+  function(routeService, dataService){
   console.log('** loading models/detail');
 
   var model = kendo.observable({
+    movie: { id: 0, posterUrl: '' },
+
     closeDetailWindow: function(e){
       e.preventDefault();
-      App.router.navigate('/');
+      routeService.router.navigate('/');
     },
-    setCurrent: function(id){
-      this.set('movie', dataService.movies.get(id));
+    setCurrent: function(movie){
+      this.set('movie', movie);
+    },
+
+    getPosterUrl: function(){
+      return 'images/posters/' + this.get('movie').posterUrl;
     }
   });
 
