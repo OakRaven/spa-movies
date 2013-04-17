@@ -1,6 +1,6 @@
-// listModel
+define(['services/router', 'models/detail'], function(router, detailModel){
+  console.log('** loading models/list');
 
-define(['models/detail', 'services/router'], function(detailModel, router){
   var listModel = kendo.observable({
     movies: [],
 
@@ -12,11 +12,10 @@ define(['models/detail', 'services/router'], function(detailModel, router){
       e.preventDefault();
       var movie = e.data;
       detailModel.set('movie', movie);
+      console.log('[Navigating to ' + movie.id + ']');
       router.navigate('/movie/' + movie.id);
     }
   });
 
-  return {
-    listModel: listModel
-  };
+  return listModel;
 });

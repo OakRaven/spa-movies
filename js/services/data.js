@@ -1,9 +1,13 @@
-// dataservice.js
+define(['models/list'], function(listModel){
+  console.log('** loading services/data');
 
-define(function(){
   var movies = new kendo.data.DataSource({
     schema: { model: {} },
-    transport: { read: { url: '/movies.json', dataType: 'json' } }
+    transport: { read: { url: window.moviePath, dataType: 'json' } }
+  });
+
+  movies.bind('change', function(e){
+    listModel.set('movies', movies.data());
   });
 
   return {

@@ -1,5 +1,3 @@
-// router.js
-
 define([
   'services/data',
   'layouts/default',
@@ -7,6 +5,7 @@ define([
   'views/detail',
   'models/detail'],
   function(dataService, defaultLayout, listView, detailView, detailModel){
+    console.log('** loading services/router');
 
   var router = new kendo.Router({
     init: function() {
@@ -16,9 +15,9 @@ define([
   });
 
   router.route('/', function(){
+    console.log('[Navigating to \'/\']');
     App.Ui.hide_window('movieDetails');
     defaultLayout.showIn('#list', listView);
-    console.log('[Navigated to \'/\']');
   });
 
   router.route('/movie/:id', function(id){
