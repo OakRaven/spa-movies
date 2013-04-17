@@ -1,4 +1,4 @@
-define([
+require([
   'services/router',
   'services/data',
   'layouts/default',
@@ -31,7 +31,10 @@ define([
     }
   });
 
-  routeSerivce.router.start();
-  dataService.movieContext.read();
+  $(function(){
+    dataService.movieContext.fetch(function(){
+      routeSerivce.router.start();
+    });
+  });
 
 });
