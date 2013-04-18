@@ -61,5 +61,36 @@
       "Adventure",
       "Sci-Fi"
     ]
+  },
+
+  {
+    "id": 5,
+    "title": "Carrie",
+    "released": 1976,
+    "rating": "R",
+    "director": "Brian De Palma",
+    "description": "A young, abused and timid 17-year-old girl discovers she has telekinesis, and gets pushed to the limit on the night of her school's prom by a humiliating prank.",
+    "posterUrl": "l_74285_7cf00739.jpg",
+    "imdb": "tt0074285",
+    "genres": [
+      "Horror",
+      "Thriller"
+    ]
+  },
+
+  {
+    "id": 6,
+    "title": "Rosemary's Baby",
+    "released": 1968,
+    "rating": "R",
+    "director": "Roman Polanski",
+    "description": "A young couple move into a new apartment, only to be surrounded by peculiar neighbors and occurrences. When the wife becomes mysteriously pregnant, paranoia over the safety of her unborn child begins controlling her life.",
+    "posterUrl": "l_63522_3ba383bc.jpg",
+    "imdb": "tt0063522",
+    "genres": [
+      "Drama",
+      "Horror",
+      "Mystery"
+    ]
   }
 ]

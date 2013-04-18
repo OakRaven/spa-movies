@@ -8,6 +8,11 @@
     <link href="css/kendo.metro.min.css" rel="stylesheet" />
     <link href="css/kendo.dataviz.min.css" rel="stylesheet" />
     <link href="css/kendo.dataviz.metro.min.css" rel="stylesheet" />
+    <style>
+      #list tbody tr {
+        cursor: pointer;
+      }
+    </style>
 
     <script>
       window.moviePath = '/~mike/movies/movies.json';
@@ -77,10 +82,7 @@
         <div class="navbar">
           <div class="navbar-inner">
             <a href="" class="brand">SPA Day at the Movies</a>
-            <ul class="nav">
-              <li class="active"><a href="">Home</a></li>
-              <li><a href="">About</a></li>
-            </ul>
+            <ul class="nav" data-bind="source: paths" data-template="naviation-item-template"></ul>
           </div>
         </div>
         <div class="well">
@@ -90,9 +92,13 @@
       <div id="movieDetails" style="display: none;"></div>
     </script>
 
+    <script type="text/x-kendo-template" id="naviation-item-template">
+      <li data-bind="attr: { class: isActive }"><a href="" data-bind="text: title, click: navigate"></a></li>
+    </script>
+
     <script type="text/x-kendo-template" id="movie-list-row">
-      <tr>
-        <td><a href="" data-bind="text: title, click: showTitle"></a></td>
+      <tr data-bind="click: showTitle">
+        <td data-bind="text: title"></td>
         <td data-bind="text: rating"></td>
         <td data-bind="text: director"></td>
         <td data-bind="text: released"></td>
