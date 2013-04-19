@@ -8,8 +8,13 @@ define(['layouts/default'], function(defaultLayout){
     }
   });
 
+  var navigate = function(path){
+    router.navigate(path);
+  };
+
   return {
-    router: router
+    router: router,
+    navigate: navigate
   };
 
 });

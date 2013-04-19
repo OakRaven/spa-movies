@@ -1,10 +1,10 @@
 require([
-  'order!services/router',
-  'order!services/data',
-  'order!layouts/default',
-  'order!views/list',
-  'order!views/detail',
-  'order!models/detail'],
+  'services/router',
+  'services/data',
+  'layouts/default',
+  'views/list',
+  'views/detail',
+  'models/detail'],
 
   function(routeSerivce, dataService, defaultLayout, listView, detailView, detailModel){
 

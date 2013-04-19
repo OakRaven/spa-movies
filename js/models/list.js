@@ -17,7 +17,7 @@ define([
       var movie = e.data;
       detailModel.set('movie', movie);
       console.log('[Navigating to ' + movie.id + ']');
-      routeSerivce.router.navigate('/movie/' + movie.id);
+      routeSerivce.navigate('/movie/' + movie.id);
     }
   });
 

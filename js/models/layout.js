@@ -10,7 +10,7 @@ define(['services/router'], function(routeService){
 
   var navigate = function(e){
     e.preventDefault();
-    routeService.router.navigate(e.data.path);
+    routeService.navigate(e.data.path);
   };
 
   var isActive = function(item){
